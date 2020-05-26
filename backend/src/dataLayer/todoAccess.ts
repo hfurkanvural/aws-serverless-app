@@ -5,7 +5,7 @@ import { TodoUpdate } from '../models/TodoUpdate';
 import * as AWSXRay from 'aws-xray-sdk'
 import { createLogger } from '../utils/logger'
 
-const logger = createLogger('offlineDb');
+const logger = createLogger('DBAccess');
 const XAWS = AWSXRay.captureAWS(AWS);
 
 export default class TodoAccess {
@@ -80,7 +80,7 @@ export default class TodoAccess {
 }
 
 function createDynamoDBClient() {
-    if (process.env.IS_OFFLINE) {
+    if (process.env.IS_OFFLINE === 'true') {
 
       logger.info('Creating a local DynamoDB instance');
 

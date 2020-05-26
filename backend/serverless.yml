@@ -8,7 +8,6 @@ plugins:
   - serverless-aws-documentation
   - serverless-dynamodb-local
   - serverless-offline
-  - serverless-s3-local
 
 provider:
   name: aws
